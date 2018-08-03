@@ -25,7 +25,7 @@ namespace keep.Controllers
         }
 
         [HttpGet("label/{label}")]  //capture route parameter
-        public IActionResult Get(string label)
+        public IActionResult GetByLabel(string label)
         {
             var product = _products.Where(p => p.Label == label);
             if (product == null)
@@ -36,7 +36,7 @@ namespace keep.Controllers
         }
 
         [HttpGet("pin/{val}")]  //capture route parameter
-        public IActionResult Get(bool val)
+        public IActionResult GetByPinnedStatus(bool val)
         {
             var product = _products.Where(p => p.PinnedStatus == val);
             if (product == null)

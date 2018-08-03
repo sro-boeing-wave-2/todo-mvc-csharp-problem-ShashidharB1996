@@ -1,0 +1,14 @@
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.deps.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.runtimeconfig.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.runtimeconfig.dev.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.pdb
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.csprojAssemblyReference.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.csproj.CoreCompileInputs.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.AssemblyInfoInputs.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.AssemblyInfo.cs
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.pdb
