@@ -1,0 +1,14 @@
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\bin\Debug\netcoreapp2.1\GoogleKeepLike.deps.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\bin\Debug\netcoreapp2.1\GoogleKeepLike.runtimeconfig.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\bin\Debug\netcoreapp2.1\GoogleKeepLike.runtimeconfig.dev.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\bin\Debug\netcoreapp2.1\GoogleKeepLike.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.csprojAssemblyReference.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.csproj.CoreCompileInputs.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.RazorAssemblyInfo.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.RazorAssemblyInfo.cs
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.AssemblyInfoInputs.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.AssemblyInfo.cs
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.RazorTargetAssemblyInfo.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\bin\Debug\netcoreapp2.1\GoogleKeepLike.pdb
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\GoogleKeepLike\GoogleKeepLike\obj\Debug\netcoreapp2.1\GoogleKeepLike.pdb

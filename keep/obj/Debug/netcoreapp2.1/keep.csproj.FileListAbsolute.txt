@@ -1,0 +1,14 @@
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\bin\Debug\netcoreapp2.1\keep.deps.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\bin\Debug\netcoreapp2.1\keep.runtimeconfig.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\bin\Debug\netcoreapp2.1\keep.runtimeconfig.dev.json
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\bin\Debug\netcoreapp2.1\keep.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.csprojAssemblyReference.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.csproj.CoreCompileInputs.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.RazorAssemblyInfo.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.RazorAssemblyInfo.cs
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.AssemblyInfoInputs.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.AssemblyInfo.cs
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.RazorTargetAssemblyInfo.cache
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\bin\Debug\netcoreapp2.1\keep.pdb
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.dll
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Debug\netcoreapp2.1\keep.pdb
