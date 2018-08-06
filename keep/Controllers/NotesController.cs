@@ -19,9 +19,10 @@ namespace keep.Controllers
 
         private IKeepService _keepService;
 
-        public NotesController(IKeepService keepService)
+        public NotesController(keepContext _context)
         {
-            _keepService = keepService;
+            _keepService = new KeepService(_context);
+            //_keepService = keepService;
         }
 
         // GET: api/Notes
@@ -90,7 +91,7 @@ namespace keep.Controllers
 
             await _keepService.Edit(id, note);
 
-            return CreatedAtAction("Get", new { id = note.ID }, note);
+            return CreatedAtAction("GetNote", new { id = note.ID }, note);
         }
 
 
@@ -116,14 +117,14 @@ namespace keep.Controllers
             return Ok();
         }
 
-        //[HttpDelete]
-        //[Route("all")]
-        //public async Task<IActionResult> DeleteAll()
-        //{
-        //    await _keepService.RemoveAll();
+        [HttpDelete]
+        [Route("all")]
+        public async Task<IActionResult> DeleteAll()
+        {
+            await _keepService.RemoveAll();
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
 
     }
 }

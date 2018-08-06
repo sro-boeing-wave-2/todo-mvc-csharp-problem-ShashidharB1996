@@ -10,12 +10,13 @@ namespace keep.Models
     {
         [Key]
         public int ID { get; set; }
+        [Required]
         public string Title { get; set; }
         public string PlainText { get; set; }
         public bool PinnedStatus { get; set; }
-        [Required]
+        
         public List<Label> Label { get; set; }
-        [Required]
+        
         public List<CheckList> ChkList { get; set; }
 
     }
