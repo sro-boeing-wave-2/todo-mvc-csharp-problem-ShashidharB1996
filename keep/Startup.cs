@@ -10,6 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using keep.Models;
+using Swashbuckle.AspNetCore.Swagger;
+using keep.Services;
+using keep.Contracts;
 
 namespace keep
 {
@@ -26,6 +31,17 @@ namespace keep
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // Adding service for SWAGGER
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "First API using SWAGGER", Version = "v1" });
+            });
+
+            services.AddScoped<IKeepService, KeepService>();
+
+            services.AddDbContext<keepContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +55,20 @@ namespace keep
             {
                 app.UseHsts();
             }
+
+            //app.UseHttpsRedirection();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "First API using SWAGGER V1");
+                //c.RoutePrefix = string.Empty;
+
+            });
 
             app.UseHttpsRedirection();
             app.UseMvc();

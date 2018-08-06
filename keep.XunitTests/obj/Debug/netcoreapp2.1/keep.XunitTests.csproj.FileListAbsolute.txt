@@ -1,0 +1,17 @@
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\keep.XunitTests.deps.json
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\keep.XunitTests.runtimeconfig.json
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\keep.XunitTests.runtimeconfig.dev.json
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\keep.XunitTests.dll
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\keep.dll
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\keep.pdb
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\obj\Debug\netcoreapp2.1\keep.XunitTests.csprojAssemblyReference.cache
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\obj\Debug\netcoreapp2.1\keep.XunitTests.csproj.CoreCompileInputs.cache
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\obj\Debug\netcoreapp2.1\keep.XunitTests.AssemblyInfoInputs.cache
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\obj\Debug\netcoreapp2.1\keep.XunitTests.AssemblyInfo.cs
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\obj\Debug\netcoreapp2.1\keep.XunitTests.csproj.CopyComplete
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\bin\Debug\netcoreapp2.1\keep.XunitTests.pdb
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\obj\Debug\netcoreapp2.1\keep.XunitTests.dll
+E:\workspace\ASP.NET_playground\unit-testing-aspnetcore-webapi\my stuff\keep.XunitTests\obj\Debug\netcoreapp2.1\keep.XunitTests.pdb
