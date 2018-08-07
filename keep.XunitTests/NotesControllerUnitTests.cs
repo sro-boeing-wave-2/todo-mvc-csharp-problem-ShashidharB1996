@@ -130,6 +130,7 @@ namespace keep.XunitTests
                 Title = "SECOND NOTE",
                 PlainText = "Text in the second Note",
                 PinnedStatus = true,
+                
 
                 Label = new List<Label>
                 {
