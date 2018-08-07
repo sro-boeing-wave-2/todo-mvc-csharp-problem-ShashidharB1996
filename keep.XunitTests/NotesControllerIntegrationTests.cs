@@ -80,9 +80,12 @@ namespace keep.XunitTests
 
         }
 
-            //_client.DefaultRequestHeaders.Accept.Clear();
-            //_client.DefaultRequestHeaders.Accept.Add(
-            //   new MediaTypeWithQualityHeaderValue("application/json"));
+        //_client.DefaultRequestHeaders.Accept.Clear();
+        //_client.DefaultRequestHeaders.Accept.Add(
+        //   new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+
 
 
         [Fact]
@@ -200,45 +203,45 @@ namespace keep.XunitTests
 
         }
 
-        //        [Fact]
-        //        public async Task Notes_Post_Specific_Invalid()
-        //        {
-        //            // Arrange
-        //            var noteToAdd = new Note { PlainText = "John" };
-        //            var content = JsonConvert.SerializeObject(noteToAdd);
-        //            var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
+        [Fact]
+        public async Task PostNoteSpecificInvalid()
+        {
+            // Arrange
+            var noteToAdd = new Note { PlainText = "John" };
+            var content = JsonConvert.SerializeObject(noteToAdd);
+            var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
 
-        //            // Act
-        //            var response = await _client.PostAsync("/api/Notes", stringContent);
+            // Act
+            var response = await _client.PostAsync("/api/Notes", stringContent);
 
-        //            // Assert
-        //            response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
-        //            var responseString = await response.Content.ReadAsStringAsync();
-        //            responseString.Should().Contain("The Label and ChkList field is required");
-        //              //  .And.Contain("The LastName field is required")
-        //              //  .And.Contain("The Phone field is required");
-        //        }
+            // Assert
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
+            //var responseString = await response.Content.ReadAsStringAsync();
+            //responseString.Should().Contain("The Label and ChkList field is required");
+            //  .And.Contain("The LastName field is required")
+            //  .And.Contain("The Phone field is required");
+        }
 
 
 
-        //        [Fact]
-        //        public async Task Notes_Put_Specific_Invalid()
-        //        {
-        //            // Arrange
-        //            var noteToChange = new Note { PlainText = "John" };
-        //            var content = JsonConvert.SerializeObject(noteToChange);
-        //            var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
+        [Fact]
+        public async Task PutNoteSpecficInvalid()
+        {
+            // Arrange
+            var noteToChange = new Note { PlainText = "John" };
+            var content = JsonConvert.SerializeObject(noteToChange);
+            var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
 
-        //            // Act
-        //            var response = await _client.PutAsync("/api/Notes/16", stringContent);
+            // Act
+            var response = await _client.PutAsync("/api/Notes/16", stringContent);
 
-        //            // Assert
-        //            response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
-        //            var responseString = await response.Content.ReadAsStringAsync();
-        //            responseString.Should().Contain("The Label and ChkList field is required")
-        //                .And.Contain("The Label field is required")
-        //                .And.Contain("The ChkList field is required");
-        //        }
+            // Assert
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
+            //var responseString = await response.Content.ReadAsStringAsync();
+            //responseString.Should().Contain("The Label and ChkList field is required")
+            //    .And.Contain("The Label field is required")
+            //    .And.Contain("The ChkList field is required");
+        }
 
         [Fact]
         public async Task DeleteNoteSpecific()
@@ -255,13 +258,15 @@ namespace keep.XunitTests
         }
 
 
+
+
         //[Fact]
         //public async Task IntegrationPutNoteSpecific()
         //{
         //    // Arrange
         //    var note = new Note
         //    {
-        //        ID = 4,
+        //        ID = 2,
         //        Title = "THIRD THIRD THIRD Note",
         //        PlainText = "Text in the third Note",
         //        PinnedStatus = true,
@@ -282,7 +287,7 @@ namespace keep.XunitTests
         //    var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
 
         //    // Act
-        //    var response = await _client.PutAsync("/api/Notes/4", stringContent);
+        //    var response = await _client.PutAsync("/api/Notes/2", stringContent);
 
         //    _context.Note.Update(note);
         //    _context.SaveChanges();
@@ -294,6 +299,9 @@ namespace keep.XunitTests
 
 
         //}
+
+
+
 
     }
 }
