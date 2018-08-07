@@ -89,29 +89,31 @@ namespace keep.XunitTests
 
 
 
-        [Fact]
-        public async Task IntegrationTestGetAllNotesagain()
-        {
-            //Act
-            var response = await _client.GetAsync("/api/Notes");
-
-            //Assert
-            response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-
-            var notes = JsonConvert.DeserializeObject<List<Note>>(responseString);
 
 
-            notes.Count().Should().Be(0);
-            Console.WriteLine(notes.Count);
-            Console.WriteLine(notes);
+        //[Fact]
+        //public async Task IntegrationTestGetAllNotesagain()
+        //{
+        //    //Act
+        //    var response = await _client.GetAsync("/api/Notes");
 
-            //foreach (char x in responseString)
-            //{
-            //    Console.WriteLine(x);
-            //}
-            //Assert.Equal(2, responseString.Length);
-        }
+        //    //Assert
+        //    response.EnsureSuccessStatusCode();
+        //    var responseString = await response.Content.ReadAsStringAsync();
+
+        //    var notes = JsonConvert.DeserializeObject<List<Note>>(responseString);
+
+
+        //    notes.Count().Should().Be(0);
+        //    Console.WriteLine(notes.Count);
+        //    Console.WriteLine(notes);
+
+        //    //foreach (char x in responseString)
+        //    //{
+        //    //    Console.WriteLine(x);
+        //    //}
+        //    //Assert.Equal(2, responseString.Length);
+        //}
 
 
 
