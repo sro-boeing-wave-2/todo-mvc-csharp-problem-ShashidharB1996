@@ -19,6 +19,9 @@ namespace keep.XunitTests
         private readonly NotesController _controller;
         public NotesControllerUnitTests()
         {
+            //var OptionBuilder = new DbContextOptionsBuilder<keepContext>();
+            //OptionBuilder.UseInMemoryDatabase(Guid.NewGuid().ToString());
+
             var OptionBuilder = new DbContextOptionsBuilder<keepContext>();
             OptionBuilder.UseInMemoryDatabase("TestDB");
             keepContext kContext = new keepContext(OptionBuilder.Options);

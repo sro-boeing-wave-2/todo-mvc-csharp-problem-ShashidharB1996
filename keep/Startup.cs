@@ -45,15 +45,17 @@ namespace keep
             //services.AddDbContext<keepContext>(options =>
             //       options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
 
+            
 
-            if (_currentEnvironment.IsDevelopment())
+            if (_currentEnvironment.IsEnvironment("Testing"))
             {
-                services.AddDbContext<keepContext>(options => options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
+                
+                services.AddDbContext<keepContext>(options =>
+               options.UseInMemoryDatabase("TestDB"));
             }
             else
             {
-                services.AddDbContext<keepContext>(options =>
-               options.UseInMemoryDatabase("TestDB"));
+                services.AddDbContext<keepContext>(options => options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
             }
         }
 

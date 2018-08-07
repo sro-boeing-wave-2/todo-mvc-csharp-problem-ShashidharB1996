@@ -36,21 +36,26 @@ namespace keep.XunitTests
         public async Task IntegrationTestGetAllNotes()
         {
             //Act
-           var response = await _client.GetAsync("/api/Notes");
+            var response = await _client.GetAsync("/api/Notes");
 
             //Assert
             response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
+
             var notes = JsonConvert.DeserializeObject<List<Note>>(responseString);
+
+
             notes.Count().Should().Be(0);
             Console.WriteLine(notes.Count);
+            Console.WriteLine(notes);
         }
 
+
         [Fact]
-        public async Task IntegrationTestPost()
+        public async Task IntegrationTestPostNote()
         {
             // Arrange
-            var NoteToAdd = new Note
+            var note = new Note
             {
                 Title = "First Note",
                 PlainText = "Text in the first Note",
@@ -68,7 +73,7 @@ namespace keep.XunitTests
 
                 }
             };
-            var content = JsonConvert.SerializeObject(NoteToAdd);
+            var content = JsonConvert.SerializeObject(note);
             var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
 
             // Act
@@ -77,25 +82,54 @@ namespace keep.XunitTests
             // Assert
             response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
-            var note = JsonConvert.DeserializeObject<Note>(responseString);
-            note.ID.Should().Be(1);
-            Console.WriteLine(note.ID);
+            var notes = JsonConvert.DeserializeObject<Note>(responseString);
+            notes.ID.Should().Be(1);
+            Console.WriteLine(notes.ID);
         }
+
+
 
         [Fact]
-        public async Task IntegrationTestGetSpecificNote()
+        public async Task IntegrationTestGetAllNotesagain()
         {
-            // Act
-            var response = await _client.GetAsync("/api/Notes/1");
+            //Act
+            var response = await _client.GetAsync("/api/Notes");
 
-            // Assert
+            //Assert
             response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
-            var notes = JsonConvert.DeserializeObject<Note>(responseString);
-            //notes.ID.Should().Be(1);
-            Console.WriteLine(notes.ID);
 
+            var notes = JsonConvert.DeserializeObject<List<Note>>(responseString);
+
+
+            notes.Count().Should().Be(0);
+            Console.WriteLine(notes.Count);
+            Console.WriteLine(notes);
+
+            //foreach (char x in responseString)
+            //{
+            //    Console.WriteLine(x);
+            //}
+            //Assert.Equal(2, responseString.Length);
         }
+
+
+
+
+        //[Fact]
+        //public async Task IntegrationTestGetSpecificNote()
+        //{
+        //    // Act
+        //    var response = await _client.GetAsync("/api/Notes/1");
+
+        //    // Assert
+        //    response.EnsureSuccessStatusCode();
+        //    var responseString = await response.Content.ReadAsStringAsync();
+        //    var notes = JsonConvert.DeserializeObject<Note>(responseString);
+        //    //notes.ID.Should().Be(1);
+        //    Console.WriteLine(notes.ID);
+
+        //}
 
         //        [Fact]
         //        public async Task Notes_Post_Specific_Invalid()
