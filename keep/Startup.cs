@@ -20,11 +20,13 @@ namespace keep
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment currentEnvironment)
         {
             Configuration = configuration;
+            _currentEnvironment = currentEnvironment;
         }
 
+        public IHostingEnvironment _currentEnvironment { get; }
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -40,8 +42,19 @@ namespace keep
 
             services.AddScoped<IKeepService, KeepService>();
 
-            services.AddDbContext<keepContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
+            //services.AddDbContext<keepContext>(options =>
+            //       options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
+
+
+            if (_currentEnvironment.IsDevelopment())
+            {
+                services.AddDbContext<keepContext>(options => options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
+            }
+            else
+            {
+                services.AddDbContext<keepContext>(options =>
+               options.UseInMemoryDatabase("TestDB"));
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
