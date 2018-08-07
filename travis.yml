@@ -1,6 +1,6 @@
 language: csharp
 
-solution: todo-mvc-csharp-problem-ShashidharB1996.sln
+solution: keep.sln
 
 notifications:
 
