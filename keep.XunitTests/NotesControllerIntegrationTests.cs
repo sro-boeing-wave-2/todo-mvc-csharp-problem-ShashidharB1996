@@ -71,13 +71,8 @@ namespace keep.XunitTests
             }
 
             };
-
-
-
-
             _context.Note.AddRange(Notes);
             _context.SaveChanges();
-
         }
 
         //_client.DefaultRequestHeaders.Accept.Clear();
@@ -142,8 +137,8 @@ namespace keep.XunitTests
             notes.ID.Should().Be(3);
             Console.WriteLine("PostNoteID" + notes.ID);
 
-            _context.Note.Add(put);
-            _context.SaveChanges();
+            //_context.Note.Add(put);
+            //_context.SaveChanges();
         }
 
         [Fact]
@@ -152,6 +147,7 @@ namespace keep.XunitTests
             // Arrange
             var put = new Note
             {
+                
                 Title = "Fourth Note",
                 PlainText = "Text in the third Note",
                 PinnedStatus = true,
@@ -181,8 +177,8 @@ namespace keep.XunitTests
             notes.ID.Should().Be(3);
             Console.WriteLine("PostNoteID" + notes.ID);
 
-            _context.Note.Add(put);
-            _context.SaveChanges();
+            //_context.Note.Add(put);
+            //_context.SaveChanges();
         }
 
 
@@ -199,7 +195,7 @@ namespace keep.XunitTests
             notes.ID.Should().Be(1);
             Console.WriteLine("GetNoteByID" + notes.ID);
 
-            _context.SaveChanges();
+            //_context.SaveChanges();
 
         }
 
@@ -260,45 +256,45 @@ namespace keep.XunitTests
 
 
 
-        //[Fact]
-        //public async Task IntegrationPutNoteSpecific()
-        //{
-        //    // Arrange
-        //    var note = new Note
-        //    {
-        //        ID = 2,
-        //        Title = "THIRD THIRD THIRD Note",
-        //        PlainText = "Text in the third Note",
-        //        PinnedStatus = true,
+        [Fact]
+        public async Task IntegrationPutNoteSpecific()
+        {
+            // Arrange
+            var note = new Note
+            {
+                ID = 1,
+                Title = "THIRD THIRD THIRD Note",
+                PlainText = "Text in the third Note",
+                PinnedStatus = true,
 
-        //        Label = new List<Label>
-        //        {
-        //            new Label{LabelText="label 1 in third Note"},
-        //            new Label{LabelText="label 2 in third Note"}
-        //        },
-        //        ChkList = new List<CheckList>
-        //        {
-        //            new CheckList{CheckListText="checklist 1 in third Note"},
-        //            new CheckList {CheckListText="checklist 2 in third Note"}
+                Label = new List<Label>
+                {
+                    new Label{LabelText="label 1 in third Note"},
+                    new Label{LabelText="label 2 in third Note"}
+                },
+                ChkList = new List<CheckList>
+                {
+                    new CheckList{CheckListText="checklist 1 in third Note"},
+                    new CheckList {CheckListText="checklist 2 in third Note"}
 
-        //        }
-        //    };
-        //    var content = JsonConvert.SerializeObject(note);
-        //    var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
+                }
+            };
+            var content = JsonConvert.SerializeObject(note);
+            var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
 
-        //    // Act
-        //    var response = await _client.PutAsync("/api/Notes/2", stringContent);
+            // Act
+            var response = await _client.PutAsync("/api/Notes/1", stringContent);
 
-        //    _context.Note.Update(note);
-        //    _context.SaveChanges();
+            //_context.Note.Update(note);
+            //_context.SaveChanges();
 
-        //    // Assert
-        //    response.EnsureSuccessStatusCode();
-        //    var responseString = await response.Content.ReadAsStringAsync();
-        //    responseString.Should().Be(String.Empty);
+            // Assert
+            response.EnsureSuccessStatusCode();
+            //var responseString = await response.Content.ReadAsStringAsync();
+            //responseString.Should().Be(String.Empty);
 
 
-        //}
+        }
 
 
 

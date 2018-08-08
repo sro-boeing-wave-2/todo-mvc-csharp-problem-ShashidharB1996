@@ -85,7 +85,7 @@ namespace keep.Services
             ////throw new NotImplementedException();
             //return Task.FromResult(items);
 
-            var result = _context.Note.Include(x => x.ChkList).Include(x => x.Label).First(x => x.ID == id);
+            var result = _context.Note.Include(x => x.ChkList).Include(x => x.Label).FirstOrDefault(x => x.ID == id);
             return Task.FromResult(result);
         }
 
@@ -96,7 +96,7 @@ namespace keep.Services
             //return Task.CompletedTask;
             ////throw new NotImplementedException();
 
-            var present = _context.Note.Include(x => x.ChkList).Include(x => x.Label).First(z => z.ID == id);
+            var present = _context.Note.Include(x => x.ChkList).Include(x => x.Label).FirstOrDefault(z => z.ID == id);
             _context.Note.Remove(present);
             _context.SaveChanges();
             return Task.CompletedTask;
@@ -118,13 +118,14 @@ namespace keep.Services
             return _context.Note.Any(e => e.ID == id);
         }
 
-        //public Task<List<Note>> GetByQuery(bool? PinnedStatus = null, string title = "", string labelName = "")
-        //{
-        //    var val = _context.Note.Include(x => x.ChkList).Include(x => x.Label).Where(
-        //       m => ((title == "") || (m.Title == title)) && ((!PinnedStatus.HasValue) || (m.PinnedStatus == PinnedStatus)) && ((labelName == "") || (m.Label).Any(b => b.LabelText == labelName))).ToList();
-        //    return Task.FromResult(val);
 
-        //    //throw new NotImplementedException();
-        //}
+        public Task<List<Note>> GetByQuery(bool? PinnedStatus = null, string title = "", string labelName = "")
+        {
+            var val = _context.Note.Include(x => x.ChkList).Include(x => x.Label).Where(
+               m => ((title == "") || (m.Title == title)) && ((!PinnedStatus.HasValue) || (m.PinnedStatus == PinnedStatus)) && ((labelName == "") || (m.Label).Any(b => b.LabelText == labelName))).ToList();
+            return Task.FromResult(val);
+
+            //throw new NotImplementedException();
+        }
     }
 }
