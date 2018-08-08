@@ -119,14 +119,14 @@ namespace keep.Controllers
             return Ok();
         }
 
-        //[HttpDelete]
-        //[Route("all")]
-        //public async Task<IActionResult> DeleteAll()
-        //{
-        //    await _keepService.RemoveAll();
+        [HttpDelete]
+        [Route("all")]
+        public async Task<IActionResult> DeleteAll()
+        {
+            await _keepService.RemoveAll();
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
 
     }
 }

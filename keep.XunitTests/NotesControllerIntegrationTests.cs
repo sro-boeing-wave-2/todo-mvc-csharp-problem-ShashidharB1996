@@ -147,7 +147,7 @@ namespace keep.XunitTests
             // Arrange
             var put = new Note
             {
-                
+
                 Title = "Fourth Note",
                 PlainText = "Text in the third Note",
                 PinnedStatus = true,
@@ -292,10 +292,12 @@ namespace keep.XunitTests
             response.EnsureSuccessStatusCode();
             //var responseString = await response.Content.ReadAsStringAsync();
             //responseString.Should().Be(String.Empty);
-
+        }
+        [Fact]
+        public async Task IntegrationTestDeleteAllNotes()
+        {
 
         }
-
 
 
 

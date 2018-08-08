@@ -195,17 +195,19 @@ namespace keep.XunitTests
         }
 
 
-        //[Fact]
-        //public async void TestDeleteAllNotes()
-        //{
-        //    var result = await _controller.DeleteAll();
+        [Fact]
+        public void TestDeleteAllNotes()
+        {
+            var _controller = GetController();
+            var result = _controller.DeleteAll();
 
-        //    //Console.Write(result.Result);
+            //Console.Write(result.Result);
+            Assert.True(result.IsCompletedSuccessfully);
 
-        //    var objectResult = result.Should().BeOfType<OkResult>().Subject;
-        //    //var notes = objectresult.Value as Note;
-        //    //Assert.Equal("First Note", notes.Title);
-        //}
+            //var objectResult = result.Should().BeOfType<OkResult>().Subject;
+            //var notes = objectresult.Value as Note;
+            //Assert.Equal("First Note", notes.Title);
+        }
 
 
     }

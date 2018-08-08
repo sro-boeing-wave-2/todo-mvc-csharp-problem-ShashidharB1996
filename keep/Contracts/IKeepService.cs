@@ -15,6 +15,6 @@ namespace keep.Contracts
         Task Edit(int id, Note note); //put
         Task Remove(int id); //delete
         Task<List<Note>> GetByQuery(bool? PinnedStatus = null, string title = "", string labelName = "");
-        //Task RemoveAll();
+        Task RemoveAll();
     }
 }
