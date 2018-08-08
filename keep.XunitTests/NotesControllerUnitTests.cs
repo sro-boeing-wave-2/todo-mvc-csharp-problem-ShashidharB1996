@@ -31,6 +31,7 @@ namespace keep.XunitTests
         }
 
 
+
         public void CreateData(DbContextOptions<keepContext> options)
         {
             using (var kContext = new keepContext(options))
@@ -82,15 +83,7 @@ namespace keep.XunitTests
         }
 
 
-        [Fact]
-        public void TestGetByPinnedAndLabel()
-        {
-            var _controller = GetController();
-            var result = _controller.GetByQuery(true, "", "");
-            var objectresult = result.Result as OkObjectResult;
-            var notes = objectresult.Value as List<Note>;
-            Assert.Equal(2, notes.Count());
-        }
+
 
         [Fact]
         public async void TestGetNoteById()
@@ -195,19 +188,7 @@ namespace keep.XunitTests
         }
 
 
-        [Fact]
-        public void TestDeleteAllNotes()
-        {
-            var _controller = GetController();
-            var result = _controller.DeleteAll();
 
-            //Console.Write(result.Result);
-            Assert.True(result.IsCompletedSuccessfully);
-
-            //var objectResult = result.Should().BeOfType<OkResult>().Subject;
-            //var notes = objectresult.Value as Note;
-            //Assert.Equal("First Note", notes.Title);
-        }
 
 
     }

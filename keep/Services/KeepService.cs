@@ -104,13 +104,7 @@ namespace keep.Services
         }
 
 
-        public Task RemoveAll()
-        {
-            var notes = _context.Note.Include(x => x.ChkList).Include(x => x.Label);
-            _context.Note.RemoveRange(notes);
-            _context.SaveChanges();
-            return Task.CompletedTask;
-        }
+
 
 
         private bool IsNoteExists(int id)
@@ -119,13 +113,6 @@ namespace keep.Services
         }
 
 
-        public Task<List<Note>> GetByQuery(bool? PinnedStatus = null, string title = "", string labelName = "")
-        {
-            var val = _context.Note.Include(x => x.ChkList).Include(x => x.Label).Where(
-               m => ((title == "") || (m.Title == title)) && ((!PinnedStatus.HasValue) || (m.PinnedStatus == PinnedStatus)) && ((labelName == "") || (m.Label).Any(b => b.LabelText == labelName))).ToList();
-            return Task.FromResult(val);
 
-            //throw new NotImplementedException();
-        }
     }
 }

@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -144,6 +145,7 @@ namespace keep.XunitTests
         [Fact]
         public async Task IntegrationTestPostNoteAgain()
         {
+
             // Arrange
             var put = new Note
             {
@@ -293,11 +295,7 @@ namespace keep.XunitTests
             //var responseString = await response.Content.ReadAsStringAsync();
             //responseString.Should().Be(String.Empty);
         }
-        [Fact]
-        public async Task IntegrationTestDeleteAllNotes()
-        {
 
-        }
 
 
 

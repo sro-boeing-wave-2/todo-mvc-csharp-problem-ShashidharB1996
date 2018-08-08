@@ -56,22 +56,7 @@ namespace keep.Controllers
             return Ok(note);
         }
 
-        [HttpGet]
-        [Route("query")]
-        public async Task<IActionResult> GetByQuery([FromQuery] bool? Ispinned = null, [FromQuery]string title = "", [FromQuery] string labelName = "")
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var notes = await _keepService.GetByQuery(Ispinned, title, labelName);
-            if (notes.Count() == 0)
-            {
-                return NotFound();
-            }
 
-            return Ok(notes);
-        }
 
 
 
@@ -119,14 +104,7 @@ namespace keep.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        [Route("all")]
-        public async Task<IActionResult> DeleteAll()
-        {
-            await _keepService.RemoveAll();
 
-            return Ok();
-        }
 
     }
 }
