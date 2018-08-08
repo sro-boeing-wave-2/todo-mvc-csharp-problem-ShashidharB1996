@@ -22,15 +22,11 @@ namespace keep.XunitTests
             var OptionBuilder = new DbContextOptionsBuilder<keepContext>();
             OptionBuilder.UseInMemoryDatabase(Guid.NewGuid().ToString());
 
-            //var OptionBuilder = new DbContextOptionsBuilder<keepContext>();
-            //OptionBuilder.UseInMemoryDatabase("TestDB");
             keepContext kContext = new keepContext(OptionBuilder.Options);
-            //_controller = new NotesController(kContext);
+
             CreateData(OptionBuilder.Options);
             return new NotesController(kContext);
         }
-
-
 
         public void CreateData(DbContextOptions<keepContext> options)
         {
@@ -77,13 +73,9 @@ namespace keep.XunitTests
             }
             };
                 kContext.Note.AddRange(Notes);
-                var countOfEntitiesBeingTracked = kContext.ChangeTracker.Entries().Count();
                 kContext.SaveChanges();
             }
         }
-
-
-
 
         [Fact]
         public async void TestGetNoteById()
@@ -104,8 +96,6 @@ namespace keep.XunitTests
             var notes = objectresult.Value as List<Note>;
             Assert.Equal(2, notes.Count());
         }
-
-
 
         [Fact]
         public async void TestPutById()
@@ -137,10 +127,6 @@ namespace keep.XunitTests
             Assert.Equal(2, notes.ID);
         }
 
-
-
-
-
         [Fact]
         public void TestPost()
         {
@@ -169,26 +155,13 @@ namespace keep.XunitTests
         }
 
 
-
-
         [Fact]
         public void TestDeleteNoteById()
         {
-            //var result = await _controller.Delete(3);
-
-            ////Console.Write(result.Result);
-
-            //var objectResult = result.Should().BeOfType<OkResult>().Subject;
-            ////var notes = objectresult.Value as Note;
-            ////Assert.Equal("First Note", notes.Title);
-
             var _controller = GetController();
             var result = _controller.Delete(1);
             Assert.True(result.IsCompletedSuccessfully);
         }
-
-
-
 
 
     }

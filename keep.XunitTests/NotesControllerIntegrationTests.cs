@@ -76,12 +76,6 @@ namespace keep.XunitTests
             _context.SaveChanges();
         }
 
-        //_client.DefaultRequestHeaders.Accept.Clear();
-        //_client.DefaultRequestHeaders.Accept.Add(
-        //   new MediaTypeWithQualityHeaderValue("application/json"));
-
-
-
 
 
         [Fact]
@@ -110,47 +104,6 @@ namespace keep.XunitTests
             var put = new Note
             {
                 Title = "Third Note",
-                PlainText = "Text in the third Note",
-                PinnedStatus = true,
-
-                Label = new List<Label>
-                {
-                    new Label{LabelText="label 1 in third Note"},
-                    new Label{LabelText="label 2 in third Note"}
-                },
-                ChkList = new List<CheckList>
-                {
-                    new CheckList{CheckListText="checklist 1 in third Note"},
-                    new CheckList {CheckListText="checklist 2 in third Note"}
-
-                }
-            };
-            var content = JsonConvert.SerializeObject(put);
-            var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
-
-            // Act
-            var response = await _client.PostAsync("/api/Notes", stringContent);
-
-            // Assert
-            response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-            var notes = JsonConvert.DeserializeObject<Note>(responseString);
-            notes.ID.Should().Be(3);
-            Console.WriteLine("PostNoteID" + notes.ID);
-
-            //_context.Note.Add(put);
-            //_context.SaveChanges();
-        }
-
-        [Fact]
-        public async Task IntegrationTestPostNoteAgain()
-        {
-
-            // Arrange
-            var put = new Note
-            {
-
-                Title = "Fourth Note",
                 PlainText = "Text in the third Note",
                 PinnedStatus = true,
 
@@ -214,10 +167,7 @@ namespace keep.XunitTests
 
             // Assert
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
-            //var responseString = await response.Content.ReadAsStringAsync();
-            //responseString.Should().Contain("The Label and ChkList field is required");
-            //  .And.Contain("The LastName field is required")
-            //  .And.Contain("The Phone field is required");
+
         }
 
 
@@ -235,10 +185,7 @@ namespace keep.XunitTests
 
             // Assert
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
-            //var responseString = await response.Content.ReadAsStringAsync();
-            //responseString.Should().Contain("The Label and ChkList field is required")
-            //    .And.Contain("The Label field is required")
-            //    .And.Contain("The ChkList field is required");
+
         }
 
         [Fact]
@@ -251,8 +198,7 @@ namespace keep.XunitTests
 
             // Assert
             response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-            responseString.Should().Be(String.Empty);
+
         }
 
 
@@ -292,13 +238,8 @@ namespace keep.XunitTests
 
             // Assert
             response.EnsureSuccessStatusCode();
-            //var responseString = await response.Content.ReadAsStringAsync();
-            //responseString.Should().Be(String.Empty);
+
         }
-
-
-
-
     }
 }
 

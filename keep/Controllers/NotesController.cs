@@ -15,14 +15,12 @@ namespace keep.Controllers
     [ApiController]
     public class NotesController : ControllerBase
     {
-        //private readonly keepContext _context;
-
         private IKeepService _keepService;
 
         public NotesController(keepContext _context)
         {
             _keepService = new KeepService(_context);
-            //_keepService = keepService;
+
         }
 
         // GET: api/Notes
@@ -30,10 +28,7 @@ namespace keep.Controllers
         public async Task<IActionResult> GetNote()
         {
             var notes = await _keepService.GetAllItems();
-            //if (notes == null)
-            //{
-            //    return NotFound();
-            //}
+
 
             return Ok(notes);
         }
@@ -73,9 +68,6 @@ namespace keep.Controllers
             {
                 return NotFound();
             }
-
-
-
             await _keepService.Edit(id, note);
 
             return Ok(note);
@@ -103,8 +95,5 @@ namespace keep.Controllers
             await _keepService.Remove(id);
             return Ok();
         }
-
-
-
     }
 }
