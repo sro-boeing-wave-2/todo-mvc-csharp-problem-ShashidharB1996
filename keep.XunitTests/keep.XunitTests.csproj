@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\keep\keep.csproj" />
+    <ProjectReference Include="E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\keep.csproj" />
   </ItemGroup>
 
 </Project>

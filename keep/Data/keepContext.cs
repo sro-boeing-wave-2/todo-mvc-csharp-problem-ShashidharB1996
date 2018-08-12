@@ -15,6 +15,6 @@ namespace keep.Models
 
         public DbSet<keep.Models.Note> Note { get; set; }
         public DbSet<keep.Models.Label> Label { get; set; }
-        public DbSet<keep.Models.CheckList> CheckList { get; set; }
+        public DbSet<keep.Models.CheckListItem> CheckList { get; set; }
     }
 }

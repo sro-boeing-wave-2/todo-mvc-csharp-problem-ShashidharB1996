@@ -9,11 +9,13 @@ namespace keep.Contracts
     //Interface for Note
     public interface IKeepService
     {
-        Task<List<Note>> GetAllItems(); //get
+        Task<List<Note>> GetAllNotes(); //get
         Task<Note> Add(Note note); //post
         Task<Note> GetById(int id);
-        Task Edit(int id, Note note); //put
+        Task<Note> Edit(int id, Note note); //put
         Task Remove(int id); //delete
-
+        Task<List<Note>> GetByLabel(string label);
+        Task<List<Note>> GetByPin(bool pin);
+        Task<List<Note>> SearchByTitle(string title);
     }
 }

@@ -40,15 +40,15 @@ namespace keep.XunitTests
                 PlainText = "Text in the first Note",
                 PinnedStatus = true,
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
-                    new Label{LabelText="label 1 in first Note"},
+                    new Label{LabelText="label 1 in second NOte"},
                     new Label{LabelText="label 2 in first Note"}
                 },
-                ChkList=new List<CheckList>
+                CheckList=new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in first Note"},
-                    new CheckList {CheckListText="checklist 2 in first Note"}
+                    new CheckListItem{CheckListText="checklist 1 in first Note"},
+                    new CheckListItem {CheckListText="checklist 2 in first Note"}
 
                 }
             },
@@ -59,15 +59,15 @@ namespace keep.XunitTests
                 PlainText = "Text in the second Note",
                 PinnedStatus = true,
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
                     new Label{LabelText="label 1 in second NOte"},
                     new Label{LabelText="label 2 in second NOte"}
                 },
-                ChkList=new List<CheckList>
+                CheckList=new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in second NOte"},
-                    new CheckList {CheckListText="checklist 2 in second NOte"}
+                    new CheckListItem{CheckListText="checklist 1 in second NOte"},
+                    new CheckListItem {CheckListText="checklist 2 in second NOte"}
 
                 }
             }
@@ -85,6 +85,48 @@ namespace keep.XunitTests
             var objectresult = result as OkObjectResult;
             var notes = objectresult.Value as Note;
             Assert.Equal(1, notes.ID);
+        }
+
+        [Fact]
+        public async void TestGetNoteByLabel()
+        {
+            var _controller = GetController();
+            var result = await _controller.GetNoteByLabel("label 1 in second NOte");
+            var objectresult = result as OkObjectResult;
+            var notes = objectresult.Value as List<Note>;
+            //foreach (var x in notes)
+            //{
+            //    Assert.Equal("label 1 in second NOte", );
+            //}
+            Assert.Equal(2, notes.Count);
+        }
+
+        [Fact]
+        public async void TestGetNoteByPin()
+        {
+            var _controller = GetController();
+            var result = await _controller.GetNoteByPin(true);
+            var objectresult = result as OkObjectResult;
+            var notes = objectresult.Value as List<Note>;
+            //foreach (var x in notes)
+            //{
+            //    Assert.Equal("label 1 in second NOte", );
+            //}
+            Assert.Equal(2, notes.Count);
+        }
+
+        [Fact]
+        public async void TestSearchByTitle()
+        {
+            var _controller = GetController();
+            var result = await _controller.SearchNoteByTitle("First Note");
+            var objectresult = result as OkObjectResult;
+            var notes = objectresult.Value as List<Note>;
+            //foreach (var x in notes)
+            //{
+            //    Assert.Equal("label 1 in second NOte", );
+            //}
+            Assert.Equal(1, notes.Count);
         }
 
         [Fact]
@@ -108,15 +150,15 @@ namespace keep.XunitTests
                 PinnedStatus = true,
 
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
                     new Label{LabelText="label 1 in second NOte"},
                     new Label{LabelText="label 2 in second NOte"}
                 },
-                ChkList = new List<CheckList>
+                CheckList = new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in second NOte"},
-                    new CheckList {CheckListText="checklist 2 in second NOte"}
+                    new CheckListItem{CheckListText="checklist 1 in second NOte"},
+                    new CheckListItem {CheckListText="checklist 2 in second NOte"}
 
                 }
             };
@@ -136,15 +178,15 @@ namespace keep.XunitTests
                 PlainText = "Text in the third Note",
                 PinnedStatus = true,
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
                     new Label{LabelText="label 1 in third Note"},
                     new Label{LabelText="label 2 in third Note"}
                 },
-                ChkList = new List<CheckList>
+                CheckList = new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in third Note"},
-                    new CheckList {CheckListText="checklist 2 in third Note"}
+                    new CheckListItem{CheckListText="checklist 1 in third Note"},
+                    new CheckListItem {CheckListText="checklist 2 in third Note"}
 
                 }
             };
@@ -160,7 +202,9 @@ namespace keep.XunitTests
         {
             var _controller = GetController();
             var result = _controller.Delete(1);
+            
             Assert.True(result.IsCompletedSuccessfully);
+            //result.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
         }
 
 

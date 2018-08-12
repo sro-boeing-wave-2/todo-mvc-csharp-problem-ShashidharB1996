@@ -40,15 +40,15 @@ namespace keep.XunitTests
                 PlainText = "Text in the first Note",
                 PinnedStatus = true,
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
                     new Label{LabelText="label 1 in first Note"},
                     new Label{LabelText="label 2 in first Note"}
                 },
-                ChkList=new List<CheckList>
+                CheckList=new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in first Note"},
-                    new CheckList {CheckListText="checklist 2 in first Note"}
+                    new CheckListItem{CheckListText="checklist 1 in first Note"},
+                    new CheckListItem {CheckListText="checklist 2 in first Note"}
 
                 }
             },
@@ -58,15 +58,15 @@ namespace keep.XunitTests
                 PlainText = "Text in the second Note",
                 PinnedStatus = true,
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
                     new Label{LabelText="label 1 in second NOte"},
                     new Label{LabelText="label 2 in second NOte"}
                 },
-                ChkList=new List<CheckList>
+                CheckList=new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in second NOte"},
-                    new CheckList {CheckListText="checklist 2 in second NOte"}
+                    new CheckListItem{CheckListText="checklist 1 in second NOte"},
+                    new CheckListItem {CheckListText="checklist 2 in second NOte"}
 
                 }
             }
@@ -107,15 +107,15 @@ namespace keep.XunitTests
                 PlainText = "Text in the third Note",
                 PinnedStatus = true,
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
                     new Label{LabelText="label 1 in third Note"},
                     new Label{LabelText="label 2 in third Note"}
                 },
-                ChkList = new List<CheckList>
+                CheckList = new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in third Note"},
-                    new CheckList {CheckListText="checklist 2 in third Note"}
+                    new CheckListItem{CheckListText="checklist 1 in third Note"},
+                    new CheckListItem {CheckListText="checklist 2 in third Note"}
 
                 }
             };
@@ -153,6 +153,51 @@ namespace keep.XunitTests
             //_context.SaveChanges();
 
         }
+
+
+        //[Fact]
+        //public async Task IntegrationTestGetSpecificNoteByLabel()
+        //{
+        //    // Act
+        //    var response = await _client.GetAsync("/api/Notes/label/label 1 in second NOte");
+
+        //    // Assert
+        //    response.EnsureSuccessStatusCode();
+        //    var responseString = await response.Content.ReadAsStringAsync();
+
+        //    var notes = JsonConvert.DeserializeObject<List<Note>>(responseString);
+
+
+        //    notes.Count().Should().Be(2);
+
+        //    //_context.SaveChanges();
+
+        //}
+
+
+        //[Fact]
+        //public async Task IntegrationTestGetSpecificNoteByPin()
+        //{
+        //    // Act
+        //    var response = await _client.GetAsync("/api/Notes/Pin/true");
+
+        //    // Assert
+        //    response.EnsureSuccessStatusCode();
+        //    var responseString = await response.Content.ReadAsStringAsync();
+
+        //    var notes = JsonConvert.DeserializeObject<List<Note>>(responseString);
+
+
+        //    notes.Count().Should().Be(2);
+
+        //    //_context.SaveChanges();
+
+        //}
+
+
+
+
+
 
         [Fact]
         public async Task PostNoteSpecificInvalid()
@@ -215,15 +260,15 @@ namespace keep.XunitTests
                 PlainText = "Text in the third Note",
                 PinnedStatus = true,
 
-                Label = new List<Label>
+                Labels = new List<Label>
                 {
                     new Label{LabelText="label 1 in third Note"},
                     new Label{LabelText="label 2 in third Note"}
                 },
-                ChkList = new List<CheckList>
+                CheckList = new List<CheckListItem>
                 {
-                    new CheckList{CheckListText="checklist 1 in third Note"},
-                    new CheckList {CheckListText="checklist 2 in third Note"}
+                    new CheckListItem{CheckListText="checklist 1 in third Note"},
+                    new CheckListItem {CheckListText="checklist 2 in third Note"}
 
                 }
             };

@@ -27,7 +27,7 @@ namespace keep.Controllers
         [HttpGet]
         public async Task<IActionResult> GetNote()
         {
-            var notes = await _keepService.GetAllItems();
+            var notes = await _keepService.GetAllNotes();
 
 
             return Ok(notes);
@@ -51,9 +51,49 @@ namespace keep.Controllers
             return Ok(note);
         }
 
+        // GET: api/Notes/label/label
+        [HttpGet("/label/{label}")]
+        public async Task<IActionResult> GetNoteByLabel(string label)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var notes = await _keepService.GetByLabel(label);
+
+            return Ok(notes);
+        }
 
 
+        // GET: api/Notes/Pin/pin
+        [HttpGet("/Pin/{pin}")]
+        public async Task<IActionResult> GetNoteByPin(bool pin)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            var notes = await _keepService.GetByPin(pin);
+
+            return Ok(notes);
+        }
+
+
+        // GET: api/Notes/title/title
+        [HttpGet("/title/{title}")]
+        public async Task<IActionResult> SearchNoteByTitle(string title)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var notes = await _keepService.SearchByTitle(title);
+
+            return Ok(notes);
+        }
 
         // PUT: api/Notes/5
         [HttpPut("{id}")]
@@ -95,5 +135,10 @@ namespace keep.Controllers
             await _keepService.Remove(id);
             return Ok();
         }
+
+
+
+
+
     }
 }

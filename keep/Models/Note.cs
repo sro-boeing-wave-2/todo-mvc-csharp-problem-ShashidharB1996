@@ -15,9 +15,9 @@ namespace keep.Models
         public string PlainText { get; set; }
         public bool PinnedStatus { get; set; }
         
-        public List<Label> Label { get; set; }
+        public List<Label> Labels { get; set; }
         
-        public List<CheckList> ChkList { get; set; }
+        public List<CheckListItem> CheckList { get; set; }
 
     }
 }

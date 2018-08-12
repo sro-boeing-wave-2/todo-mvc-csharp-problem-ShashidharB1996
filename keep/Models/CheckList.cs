@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace keep.Models
 {
-    public class CheckList
+    public class CheckListItem
     {
         [Key]
         public int CheckListID { get; set; }
