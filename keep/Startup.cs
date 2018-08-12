@@ -72,7 +72,7 @@ namespace keep
             }
 
             //app.UseHttpsRedirection();
-
+            app.UseHttpsRedirection();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -82,11 +82,11 @@ namespace keep
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "First API using SWAGGER V1");
                 //c.RoutePrefix = string.Empty;
-
             });
 
-            app.UseHttpsRedirection();
+            
             app.UseMvc();
+            //context.Database.Migrate();
         }
     }
 }

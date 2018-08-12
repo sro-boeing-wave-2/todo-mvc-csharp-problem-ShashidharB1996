@@ -1,16 +1,18 @@
-version : '3'
+version : "3"
+
 services:
    web:
-    build : .
-    ports :
-       - "8001:80"
-     depends_on :
-       - db
+      build : .
+      image : keep_web
+      ports :
+         - "8001:80"
+      depends_on :
+         - db
 
-    db :
+   db :
       image : "microsoft/mssql-server-linux"
-      environmet:
-           SA_PASSWORD: "V_sai1995"
-           ACCEPT_EULA: "Y"
+      environment:
+         SA_PASSWORD: "Password"
+         ACCEPT_EULA: "Y"
         
        
