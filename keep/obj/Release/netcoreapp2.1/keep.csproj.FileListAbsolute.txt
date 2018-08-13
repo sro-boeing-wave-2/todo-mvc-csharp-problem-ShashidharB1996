@@ -12,3 +12,4 @@ E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-Shash
 E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Release\netcoreapp2.1\keep.dll
 E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Release\netcoreapp2.1\keep.pdb
 E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+E:\workspace\ASP.NET_playground\ASP.NET_assignment\todo-mvc-csharp-problem-ShashidharB1996\keep\obj\Release\netcoreapp2.1\keep.csprojAssemblyReference.cache

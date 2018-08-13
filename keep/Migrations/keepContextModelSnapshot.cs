@@ -19,7 +19,7 @@ namespace keep.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("keep.Models.CheckList", b =>
+            modelBuilder.Entity("keep.Models.CheckListItem", b =>
                 {
                     b.Property<int>("CheckListID")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace keep.Migrations
 
                     b.HasIndex("NoteID");
 
-                    b.ToTable("CheckList");
+                    b.ToTable("CheckListItem");
                 });
 
             modelBuilder.Entity("keep.Models.Label", b =>
@@ -71,17 +71,17 @@ namespace keep.Migrations
                     b.ToTable("Note");
                 });
 
-            modelBuilder.Entity("keep.Models.CheckList", b =>
+            modelBuilder.Entity("keep.Models.CheckListItem", b =>
                 {
                     b.HasOne("keep.Models.Note")
-                        .WithMany("ChkList")
+                        .WithMany("CheckList")
                         .HasForeignKey("NoteID");
                 });
 
             modelBuilder.Entity("keep.Models.Label", b =>
                 {
                     b.HasOne("keep.Models.Note")
-                        .WithMany("Label")
+                        .WithMany("Labels")
                         .HasForeignKey("NoteID");
                 });
 #pragma warning restore 612, 618

@@ -32,6 +32,8 @@ namespace keep
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = @"Server=db;Database=master;User=sa;Password=Shashi_1996;";
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // Adding service for SWAGGER
@@ -55,12 +57,14 @@ namespace keep
             }
             else
             {
-                services.AddDbContext<keepContext>(options => options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
+                //services.AddDbContext<keepContext>(options =>
+                //options.UseSqlServer(Configuration.GetConnectionString("keepContext"), dbOptions => dbOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
+                services.AddDbContext<keepContext>(options => options.UseSqlServer(connection));
             }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, keepContext context)
         {
             if (env.IsDevelopment())
             {
@@ -70,9 +74,8 @@ namespace keep
             {
                 app.UseHsts();
             }
-
-            //app.UseHttpsRedirection();
-            app.UseHttpsRedirection();
+            
+            
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -84,9 +87,9 @@ namespace keep
                 //c.RoutePrefix = string.Empty;
             });
 
-            
+            app.UseHttpsRedirection();
             app.UseMvc();
-            //context.Database.Migrate();
+           //context.Database.Migrate();
         }
     }
 }
