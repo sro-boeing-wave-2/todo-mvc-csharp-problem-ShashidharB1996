@@ -1,4 +1,5 @@
 ﻿using keep.Models;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace keep.Contracts
     public interface IKeepService
     {
         Task<List<Note>> GetAllNotes(); //get
-        Task<Note> Add(Note note); //post
-        Task<Note> GetById(int id);
-        Task<Note> Edit(int id, Note note); //put
-        Task Remove(int id); //delete
-        Task<List<Note>> GetByLabel(string label);
+        Task InsertNote(Note note); //post
+        //Task<Note> GetById(int id);
+        void UpdateNote(int id, Note note); //put
+        Task DeleteNote(int id); //delete
+        //Task<List<Note>> GetByLabel(string label);
         Task<List<Note>> GetByPin(bool pin);
         Task<List<Note>> SearchByTitle(string title);
     }

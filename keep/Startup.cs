@@ -32,7 +32,7 @@ namespace keep
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Server=db;Database=master;User=sa;Password=Shashi_1996;";
+            //var connection = @"Server=db;Database=master;User=sa;Password=Shashi_1996;";
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -49,22 +49,22 @@ namespace keep
 
             
 
-            if (_currentEnvironment.IsEnvironment("Testing"))
-            {
+            //if (_currentEnvironment.IsEnvironment("Testing"))
+        //    {
                 
-                services.AddDbContext<keepContext>(options =>
-               options.UseInMemoryDatabase("TestDB"));
-            }
-            else
-            {
-                //services.AddDbContext<keepContext>(options =>
-                //options.UseSqlServer(Configuration.GetConnectionString("keepContext"), dbOptions => dbOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
-                services.AddDbContext<keepContext>(options => options.UseSqlServer(connection));
-            }
+        //        services.AddDbContext<keepContext>(options =>
+        //       options.UseInMemoryDatabase("TestDB"));
+        //    }
+        //    else
+        //    {
+        //        //services.AddDbContext<keepContext>(options =>
+        //        //options.UseSqlServer(Configuration.GetConnectionString("keepContext"), dbOptions => dbOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
+        //        services.AddDbContext<keepContext>(options => options.UseSqlServer(connection));
+        //    }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, keepContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {

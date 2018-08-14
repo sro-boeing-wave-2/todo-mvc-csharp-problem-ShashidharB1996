@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,7 +10,7 @@ namespace keep.Models
 {
     public class Label
     {
-        [Key]
+        [BsonElement]
         public int LabelID { get; set; }
         public string LabelText { get; set; }
     }
