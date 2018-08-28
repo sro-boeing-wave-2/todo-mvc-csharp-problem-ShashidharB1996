@@ -18,11 +18,23 @@ namespace keep.Controllers
     [ApiController]
     public class NotesController : ControllerBase
     {
+        //KeepService mongoDbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+
+        private readonly IKeepService _context;
+        public NotesController(IKeepService context)
+        {
+            _context = context;
+        }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var mongoDbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
-            var allnotes = await mongoDbService.GetAllNotes();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //var mongoDbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+            var allnotes = await _context.GetAllNotes();
 
             return Ok(allnotes);
         }
@@ -30,9 +42,15 @@ namespace keep.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Note note)
         {
-            var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
-            await mongodbService.InsertNote(note);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            //var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+            await _context.InsertNote(note);
+
+            //return CreatedAtAction("Get", new { id = note.ID }, note);
             return Ok(note);
         }
 
@@ -40,27 +58,53 @@ namespace keep.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
-            await mongodbService.DeleteNote(id);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+             var note = await _context.DeleteNote(id);
 
-            return NoContent();
+
+            return Ok(note);
         }
 
         [HttpGet("getbytitle/{title}")]
         public async Task<IActionResult> GetByTitile([FromRoute] string title)
         {
-            var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
-            var notes = await mongodbService.SearchByTitle(title);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+            var notes = await _context.SearchByTitle(title);
 
             return Ok(notes);
         }
 
 
+        [HttpGet("getbyid/{id}")]
+        public async Task<IActionResult> GetByID([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+            var note = await _context.GetByID(id);
+
+            return Ok(note);
+        }
+
         [HttpGet("getbypin/{pin}")]
         public async Task<IActionResult> GetByPinnedStatus([FromRoute] bool pin)
         {
-            var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
-            var notes = await mongodbService.GetByPin(pin);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+            var notes = await _context.GetByPin(pin);
 
             return Ok(notes);
         }
@@ -68,137 +112,29 @@ namespace keep.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put([FromRoute] int id, [FromBody] Note note)
         {
-            var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
-            await mongodbService.UpdateNote(id, note);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            // var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+            await _context.UpdateNote(id, note);
 
             return Ok(note);
 
         }
 
-        //private IKeepService _keepService;
 
-        //public NotesController(keepContext _context)
-        //{
-        //    _keepService = new KeepService(_context);
+        [HttpGet("getbylabel/{label}")]
+        public async Task<IActionResult> GetByLabel([FromRoute] string label)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //var mongodbService = new KeepService("NotesDatabase", "Notes", "mongodb://127.0.0.1:27017");
+            var notes = await _context.GetByLabel(label);
 
-        //}
-
-        //// GET: api/Notes
-        //[HttpGet]
-        //public async Task<IActionResult> GetNote()
-        //{
-        //    var notes = await _keepService.GetAllNotes();
-
-
-        //    return Ok(notes);
-        //}
-
-
-        //// GET: api/Notes/5
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> GetNoteById(int id)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var note = await _keepService.GetById(id);
-        //    if (note == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(note);
-        //}
-
-        //// GET: api/Notes/label/label
-        //[HttpGet("/label/{label}")]
-        //public async Task<IActionResult> GetNoteByLabel(string label)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var notes = await _keepService.GetByLabel(label);
-
-        //    return Ok(notes);
-        //}
-
-
-        //// GET: api/Notes/Pin/pin
-        //[HttpGet("/Pin/{pin}")]
-        //public async Task<IActionResult> GetNoteByPin(bool pin)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var notes = await _keepService.GetByPin(pin);
-
-        //    return Ok(notes);
-        //}
-
-
-        //// GET: api/Notes/title/title
-        //[HttpGet("/title/{title}")]
-        //public async Task<IActionResult> SearchNoteByTitle(string title)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var notes = await _keepService.SearchByTitle(title);
-
-        //    return Ok(notes);
-        //}
-
-        //// PUT: api/Notes/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutById(int id, [FromBody] Note note)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    if (id != note.ID)
-        //    {
-        //        return NotFound();
-        //    }
-        //    await _keepService.Edit(id, note);
-
-        //    return Ok(note);
-        //}
-
-
-        //// POST: api/Notes
-        //[HttpPost]
-        //public async Task<IActionResult> Post([FromBody] Note note)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var newnote = await _keepService.Add(note);
-
-        //    return CreatedAtAction("GetNote", new { id = newnote.ID }, newnote);
-        //}
-
-        //// DELETE: api/Notes/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> Delete([FromRoute] int id)
-        //{
-        //    await _keepService.Remove(id);
-        //    return Ok();
-        //}
-
-
-
-
-
+            return Ok(notes);
+        }
     }
 }

@@ -13562,11 +13562,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj",
+      "projectUniqueName": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj",
       "projectName": "keep",
-      "projectPath": "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj",
+      "projectPath": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\obj\\",
+      "outputPath": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

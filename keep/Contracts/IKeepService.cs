@@ -13,9 +13,10 @@ namespace keep.Contracts
         Task<List<Note>> GetAllNotes(); //get
         Task InsertNote(Note note); //post
         //Task<Note> GetById(int id);
-        void UpdateNote(int id, Note note); //put
-        Task DeleteNote(int id); //delete
-        //Task<List<Note>> GetByLabel(string label);
+        Task UpdateNote(int id, Note note); //put
+        Task<Note> DeleteNote(int id); //delete
+        Task<List<Note>> GetByLabel(string label);
+        Task<Note> GetByID(int id);
         Task<List<Note>> GetByPin(bool pin);
         Task<List<Note>> SearchByTitle(string title);
     }

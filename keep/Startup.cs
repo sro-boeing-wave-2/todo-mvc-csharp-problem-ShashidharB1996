@@ -15,6 +15,7 @@ using keep.Models;
 using Swashbuckle.AspNetCore.Swagger;
 using keep.Services;
 using keep.Contracts;
+using keep.Data;
 
 namespace keep
 {
@@ -34,7 +35,18 @@ namespace keep
         {
             //var connection = @"Server=db;Database=master;User=sa;Password=Shashi_1996;";
 
+            services.AddCors(
+                options => options.AddPolicy("AllowSpecificOrigin",
+                builder => builder.WithOrigins("http://localhost:4200"))
+                );
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //services.Configure<Settings>(options =>
+            //{
+            //    options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
+            //    options.Database = Configuration.GetSection("MongoDb:Database").Value;
+            //});
 
             // Adding service for SWAGGER
             services.AddSwaggerGen(c =>
@@ -42,25 +54,34 @@ namespace keep
                 c.SwaggerDoc("v1", new Info { Title = "First API using SWAGGER", Version = "v1" });
             });
 
-            services.AddScoped<IKeepService, KeepService>();
+            services.AddTransient<IKeepService, KeepService>();
+            services.AddTransient<IDataContext, DataContext>();
 
             //services.AddDbContext<keepContext>(options =>
             //       options.UseSqlServer(Configuration.GetConnectionString("keepContext")));
 
-            
 
-            //if (_currentEnvironment.IsEnvironment("Testing"))
-        //    {
-                
-        //        services.AddDbContext<keepContext>(options =>
-        //       options.UseInMemoryDatabase("TestDB"));
-        //    }
-        //    else
-        //    {
-        //        //services.AddDbContext<keepContext>(options =>
-        //        //options.UseSqlServer(Configuration.GetConnectionString("keepContext"), dbOptions => dbOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
-        //        services.AddDbContext<keepContext>(options => options.UseSqlServer(connection));
-        //    }
+
+            if (_currentEnvironment.IsEnvironment("Testing"))
+            {
+
+                services.Configure<Settings>(options =>
+                {
+                    options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
+                    options.Database = Configuration.GetSection("MongoDb:Database").Value;
+                });
+            }
+            else
+            {
+                //services.AddDbContext<keepContext>(options =>
+                //options.UseSqlServer(Configuration.GetConnectionString("keepContext"), dbOptions => dbOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
+                //services.AddDbContext<keepContext>(options => options.UseSqlServer(connection));
+                services.Configure<Settings>(options =>
+                {
+                    options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
+                    options.Database = Configuration.GetSection("MongoDb:Database").Value;
+                });
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,8 +95,9 @@ namespace keep
             {
                 app.UseHsts();
             }
-            
-            
+
+            app.UseCors("AllowSpecificOrigin");
+
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -89,7 +111,10 @@ namespace keep
 
             app.UseHttpsRedirection();
             app.UseMvc();
-           //context.Database.Migrate();
+
+
+
+            //context.Database.Migrate();
         }
     }
 }

@@ -16487,7 +16487,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj",
       "FluentAssertions >= 5.4.1",
       "FluentAssertions.Autofac >= 0.7.2",
       "FluentAssertions.Json >= 5.0.0",
@@ -16509,11 +16508,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep.XunitTests\\keep.XunitTests.csproj",
+      "projectUniqueName": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep.XunitTests\\keep.XunitTests.csproj",
       "projectName": "keep.XunitTests",
-      "projectPath": "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep.XunitTests\\keep.XunitTests.csproj",
+      "projectPath": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep.XunitTests\\keep.XunitTests.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep.XunitTests\\obj\\",
+      "outputPath": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep.XunitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -16534,9 +16533,6 @@
           "projectReferences": {
             "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj": {
               "projectPath": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj"
-            },
-            "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj": {
-              "projectPath": "E:\\workspace\\MongoDB_playground\\MongoDB_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj"
             }
           }
         }
@@ -16605,15 +16601,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj'. The project file may be invalid or missing targets required for restore.",
-      "libraryId": "E:\\workspace\\ASP.NET_playground\\ASP.NET_assignment\\todo-mvc-csharp-problem-ShashidharB1996\\keep\\keep.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",
